@@ -6,20 +6,21 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import WeatherInfo from "./WeatherInfo";
 
-export default function Weather(props) {
-  const [weatherData, setWeatherdData] = useState({ ready: false });
+export default function WeatherSearch(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    setWeatherdData({
+    setWeatherData({
       ready: true,
       coordinates: response.data.coord,
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
+      temperature: Math.round(response.data.main.temp),
+      temp_max: Math.round(response.data.main.temp_max),
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
-      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed * 3.6,
       city: response.data.name,
     });
   }
@@ -28,13 +29,14 @@ export default function Weather(props) {
     event.preventDefault();
     search();
   }
+
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+
   function search() {
     let apiKey = "260bbaa7e84e6774b9f60ed1b0d90e23";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
   let form = (
@@ -59,7 +61,7 @@ export default function Weather(props) {
       </Row>
     </form>
   );
-  if (weatherData) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         {form}
