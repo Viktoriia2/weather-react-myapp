@@ -11,6 +11,12 @@
   border-color: rgba(74, 24, 103, 0.221);
   border-width: 1px;
 }
+input:focus {
+  outline: none !important;
+  border-color: #719ece2e;
+  border-width: 1px;
+  box-shadow: 0 0 10px #719ece;
+}
 .searchButton {
   position: relative;
   left: -35px;

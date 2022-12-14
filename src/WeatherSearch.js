@@ -4,62 +4,66 @@ import axios from "axios";
 import { InfinitySpin } from "react-loader-spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import WeatherInfo from "./WeatherInfo";
 
-export default function WeatherSearch(props) {
-  const [weatherData, setWeatherData] = useState({ ready: true });
+export default function Weather(props) {
+  const [weatherData, setWeatherdData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
-  function displayWeather(response) {
-    setWeatherData({
+  function handleResponse(response) {
+    setWeatherdData({
       ready: true,
-      temperature: Math.round(response.data.temperature.current),
-      city: response.data.city.name,
-      date: new Date(response.data.time * 1000),
-      description: response.data.condition.description,
-      maximumTemp: response.data.temperature.max,
-      humidity: response.data.humidity,
-      wind: response.data.wind.speed * 3.6,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
     });
-  }
-  function search() {
-    let apiKey = "260bbaa7e84e6774b9f60ed1b0d90e23";
-    let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayWeather);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
-
-  function updateCity(event) {
+  function handleCityChange(event) {
     setCity(event.target.value);
   }
-
-  if (weatherData.ready) {
+  function search() {
+    let apiKey = "260bbaa7e84e6774b9f60ed1b0d90e23";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  let form = (
+    <form onSubmit={handleSubmit}>
+      <Row className="row d-flex justify-content-end">
+        <Col xs lg="5">
+          <input
+            type="search"
+            placeholder="Enter your city..."
+            className="user_city"
+            autoComplete="off"
+            autoFocus="on"
+            onChange={handleCityChange}
+          />
+          <input type="submit" className="button searchButton" value=" " />
+          <input
+            type="button"
+            className="button currentLocationButton"
+            value=" "
+          />
+        </Col>
+      </Row>
+    </form>
+  );
+  if (weatherData) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <Row className="row d-flex justify-content-end">
-            <Col xs lg="5">
-              <input
-                type="Search"
-                placeholder="Enter your city..."
-                className="user_city"
-                autoComplete="off"
-                autoFocus="on"
-                onChange={updateCity}
-              />
-              <input type="submit" className="button searchButton" value=" " />
-              <input
-                type="button"
-                className="button currentLocationButton"
-                value=" "
-              />
-            </Col>
-          </Row>
-        </form>
+        {form}
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {

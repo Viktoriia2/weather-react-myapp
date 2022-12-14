@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import WeatherSearch from "./WeatherSearch.js";
+import WeatherSearch from "./WeatherSearch";
 import Container from 'react-bootstrap/Container';
 
 function App() {
