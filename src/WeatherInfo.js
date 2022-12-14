@@ -20,7 +20,7 @@ export default function WeatherInfo(props) {
             {props.data.city}
           </h1>
           <Row className="row-2">
-            <Col xs={4}>
+            <Col xs={5}>
               <div className="current-description text-capitalize">
                 {props.data.description}
               </div>
