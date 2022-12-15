@@ -15,15 +15,18 @@
   font-size: 18px;
   color: #987da7;
 }
+.current-description {
+  position: relative;
+  left: -35px;
+}
 .row-2 {
   position: relative;
   top: -3px;
-  left: 5px;
 }
 .row-3 {
   position: relative;
   top: -5px;
-  left: 5px;
+  left: -5px;
 }
 .current-temperature {
   position: relative;
@@ -31,6 +34,10 @@
   font-weight: 700;
   font-size: 45px;
   color: #303a61;
+}
+.celsius-current {
+  font-size: 35px;
+  font-weight: 400;
 }
 .temp_max,
 .humidity {
