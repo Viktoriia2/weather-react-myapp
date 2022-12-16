@@ -24,3 +24,12 @@ body {
   display: block;
   font-family: "Quicksand";
 }
+.work-coded {
+  position: relative;
+  top: -105px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.work-coded a {
+  color: rgb(255, 255, 255);
+}
