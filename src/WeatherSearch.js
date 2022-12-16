@@ -5,6 +5,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherSearch(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -66,6 +67,7 @@ export default function WeatherSearch(props) {
       <div className="Weather">
         {form}
         <WeatherInfo data={weatherData} />
+        <WeatherForecast />
       </div>
     );
   } else {
