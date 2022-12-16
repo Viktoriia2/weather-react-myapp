@@ -10,6 +10,7 @@
   border-radius: 10px;
   border-color: rgba(74, 24, 103, 0.221);
   border-width: 1px;
+  background-color: #acfff734;
 }
 input:focus {
   outline: none !important;
