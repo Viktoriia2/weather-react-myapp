@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Container fluid>
         <WeatherSearch defaultCity="Warsaw" />
-        <footer className="text-left">
+        <footer>
           This project was coded by Viktoria Skakovska and is{" "}
           <a
             href="https://github.com/Viktoriia2/weather-react-myapp"
