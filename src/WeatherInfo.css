@@ -1,13 +1,13 @@
 .current-cont {
   position: relative;
-  top: -70px;
+  top: -40px;
   height: 120px;
-  width: 460px;
+  width: 500px;
   color: #303a61;
 }
 .Main-city {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
 }
 .current-time,
 .current-description {
@@ -47,4 +47,50 @@
 .number-maximum-humidity {
   font-weight: 600;
   color: #303a61;
+}
+
+@media only screen and (max-width: 650px) {
+  .current-cont {
+    margin-top: 20px;
+    height: 120px;
+    width: 350px;
+    color: #303a61;
+  }
+  .Main-city {
+    font-weight: 700;
+    font-size: 28px;
+    position: relative;
+    left: -5px;
+  }
+  .col-main-city {
+    margin-left: 10px;
+  }
+  .current-time,
+  .current-description {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    color: #987da7;
+    padding: 0px;
+  }
+  .row-3 {
+    position: relative;
+    top: -5px;
+    left: -110px;
+  }
+  .current-temperature {
+    position: relative;
+    left: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    color: #303a61;
+  }
+  .celsius-current {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .temp_max,
+  .humidity {
+    font-size: 13px;
+  }
 }

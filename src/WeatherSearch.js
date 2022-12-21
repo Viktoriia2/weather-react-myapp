@@ -40,32 +40,30 @@ export default function WeatherSearch(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <Row className="row d-flex justify-content-end">
-        <Col xs lg="5">
-          <input
-            type="search"
-            placeholder="Enter your city..."
-            className="user_city"
-            autoComplete="off"
-            autoFocus="on"
-            onChange={handleCityChange}
-          />
-          <input type="submit" className="button searchButton" value=" " />
-          <input
-            type="button"
-            className="button currentLocationButton"
-            value=" "
-          />
-        </Col>
-      </Row>
-    </form>
-  );
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        {form}
+        <Row className="row">
+          <form onSubmit={handleSubmit} className="d-flex justify-content-end">
+            <Col xs lg="5" className="col-form">
+              <input
+                type="button"
+                className="button currentLocationButton"
+                value=" "
+              />
+              <input
+                type="search"
+                placeholder="Enter your city..."
+                className="user_city"
+                autoComplete="off"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
+              <input type="submit" className="button searchButton" value=" " />
+            </Col>
+          </form>
+        </Row>
         <WeatherInfo data={weatherData} />
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>

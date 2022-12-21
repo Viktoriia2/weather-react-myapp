@@ -9,29 +9,29 @@ export default function WeatherInfo(props) {
   return (
     <div class="current-cont">
       <Row className="row-1">
-        <Col xs={3}>
+        <Col xs={3} className="col-icon">
           <WeatherIcon
             code={props.data.icon}
-            size={100}
+            size={90}
             className="icon-current"
           />
         </Col>
-        <Col>
+        <Col className="col-main-city">
           <h1 className="Main-city">{props.data.city}</h1>
           <Row className="row-2">
-            <Col xs={6}>
+            <Col xs={6} className="col-time">
               <div className="current-time">
                 <FormatDate date={props.data.date} />
               </div>
             </Col>
-            <Col xs={6}>
+            <Col xs={5}>
               <div className="current-description text-capitalize">
                 {props.data.description}
               </div>
             </Col>
           </Row>
           <Row className="row-3">
-            <Col xs={5}>
+            <Col xs={5} className="col-temp">
               <div className="current-temperature">
                 {props.data.temperature}
                 <span class="celsius-current">°C</span>
