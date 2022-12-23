@@ -29,7 +29,7 @@ export default function UnitConversation(props) {
   } else {
     return (
       <div className="current-temperature">
-        {Math.round(fahreinheit())}{" "}
+        {Math.round(fahreinheit())}
         <span class="celsius-current">
           <a href="/" onClick={showCelsius}>
             °C
