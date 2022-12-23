@@ -5,6 +5,7 @@
   width: 500px;
   color: #303a61;
 }
+
 .Main-city {
   font-weight: 700;
   font-size: 35px;
@@ -27,14 +28,17 @@
 
 .current-temperature {
   position: relative;
-  left: 13px;
+  left: 8px;
   font-weight: 700;
   font-size: 45px;
   color: #303a61;
 }
 .celsius-current {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
+}
+.celsius-current a {
+  text-decoration: none;
 }
 .temp_max,
 .humidity {

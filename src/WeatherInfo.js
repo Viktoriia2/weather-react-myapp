@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./WeatherInfo.css";
 import FormatDate from "./FormatDate";
+import UnitConversation from "./UnitConversation";
 
 export default function WeatherInfo(props) {
   return (
@@ -33,8 +34,7 @@ export default function WeatherInfo(props) {
       <Row className="row-3">
         <Col xs={3}>
           <div className="current-temperature">
-            {props.data.temperature}
-            <span class="celsius-current">°C</span>
+            <UnitConversation celsuis={props.data.temperature} />
           </div>
         </Col>
         <Col xs={7}>
