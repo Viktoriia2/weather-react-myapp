@@ -1,7 +1,11 @@
+.WeatherForecast-temperature-max {
+  font-weight: bold;
+}
 .Weather-Forecast {
   text-align: center;
   margin: 0px 0px 35px 0px;
 }
+
 @media only screen and (max-width: 995px) {
   .WeatherForecast-day {
     font-size: 15px;

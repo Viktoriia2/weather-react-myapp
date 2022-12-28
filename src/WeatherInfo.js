@@ -13,7 +13,8 @@ export default function WeatherInfo(props) {
         <Col xs={3} className="col-icon">
           <WeatherIcon
             code={props.data.icon}
-            size={80}
+            size={70}
+            color={"#303a61"}
             className="icon-current"
           />
         </Col>
@@ -32,12 +33,12 @@ export default function WeatherInfo(props) {
         </Col>
       </Row>
       <Row className="row-3">
-        <Col xs={3}>
+        <Col xs={3} className="current-temp-col">
           <div className="current-temperature">
             <UnitConversation celsuis={props.data.temperature} />
           </div>
         </Col>
-        <Col xs={7}>
+        <Col xs={7} className="descr-hum-max">
           <div className="temp_max">
             Maximum today:{" "}
             <span class="number-maximum-humidity">{props.data.temp_max}</span>

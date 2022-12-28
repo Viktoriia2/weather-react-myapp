@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
-export default function WeatherSearch(props) {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
@@ -21,7 +21,7 @@ export default function WeatherSearch(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed * 3.6,
+      wind: response.data.wind.speed,
       city: response.data.name,
     });
   }
@@ -36,7 +36,7 @@ export default function WeatherSearch(props) {
   }
 
   function search() {
-    let apiKey = "260bbaa7e84e6774b9f60ed1b0d90e23";
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
