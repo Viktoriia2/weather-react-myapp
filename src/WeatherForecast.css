@@ -3,12 +3,17 @@
 }
 .Weather-Forecast {
   text-align: center;
-  margin: 0px 0px 35px 0px;
+  margin: 0px 0px 25px 0px;
 }
-
+.WeatherForecast-temperature {
+  font-size: 15px;
+}
 @media only screen and (max-width: 995px) {
   .WeatherForecast-day {
     font-size: 15px;
+  }
+  .WeatherFOrecast-temperature {
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -18,7 +23,10 @@
   .WeatherForecast-day {
     font-size: 13px;
   }
+  .WeatherForecast-temperature {
+    font-size: 12px;
+  }
   .WeatherForecast-temperature-max {
-    font-weight: 600;
+    font-weight: 600px;
   }
 }

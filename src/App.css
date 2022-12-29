@@ -8,7 +8,7 @@ body {
 }
 .container-fluid {
   max-width: 730px;
-  margin: 50px auto;
+  margin: 50px;
   padding-top: 15px;
   padding-bottom: 5px;
   background: linear-gradient(
@@ -19,7 +19,6 @@ body {
   box-shadow: 0px 1px 26px 10px rgba(127, 108, 127, 0.712);
   border-radius: 15px;
   color: rgb(48, 58, 97);
-  display: block;
   font-family: "Quicksand";
 }
 footer {
@@ -43,8 +42,12 @@ footer a {
 }
 @media only screen and (max-width: 620px) {
   .container-fluid {
-    margin: 50px auto;
     padding-top: 15px;
     width: auto;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .App {
+    display: flex;
   }
 }
