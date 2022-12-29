@@ -21,11 +21,9 @@
     margin: 0px;
   }
   .WeatherForecast-day {
-    font-size: 13px;
+    font-size: 15px;
   }
-  .WeatherForecast-temperature {
-    font-size: 12px;
-  }
+
   .WeatherForecast-temperature-max {
     font-weight: 600px;
   }
