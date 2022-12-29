@@ -9,14 +9,31 @@ function App() {
       <Container fluid>
         <WeatherSearch defaultCity="Warsaw" />
         <footer>
-          This project was coded by Viktoria Skakovska and is{" "}
+          This project was coded by
+          <a
+            href="https://portfolio-viktoria-skakovska.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Viktoria Skakovska{" "}
+          </a>
+          and is{" "}
           <a
             href="https://github.com/Viktoriia2/weather-react-myapp"
             target="_blank"
             rel="noopener noreferrer"
           >
             open-source on GitHub
-          </a>
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://bespoke-conkies-b92d2f.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            hosted on Netlify
+          </a>{" "}
         </footer>
       </Container>
     </div>

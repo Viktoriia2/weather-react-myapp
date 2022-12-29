@@ -48,11 +48,6 @@ export default function Weather(props) {
           <form onSubmit={handleSubmit} className="d-flex justify-content-end">
             <Col xs lg="5" className="col-form">
               <input
-                type="button"
-                className="button currentLocationButton"
-                value=" "
-              />
-              <input
                 type="search"
                 placeholder="Enter your city..."
                 className="user_city"
