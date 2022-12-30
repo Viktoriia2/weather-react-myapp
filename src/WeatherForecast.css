@@ -28,3 +28,9 @@
     font-weight: 600px;
   }
 }
+@media only screen and (max-width: 400px) {
+  .WeatherForecast-temperature-max,
+  .WeatherForecast-temperature-min {
+    font-size: 13px;
+  }
+}
