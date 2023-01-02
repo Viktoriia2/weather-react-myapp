@@ -46,7 +46,7 @@ footer a {
     width: auto;
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 400px) {
   .App {
     display: flex;
     justify-content: center;

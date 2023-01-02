@@ -108,10 +108,9 @@ input[type="search"]::-webkit-search-results-decoration {
     position: relative;
     left: 220px;
     top: -27px;
-    width: 22px;
-    height: 22px;
+    width: 15px;
+    height: 15px;
     background: url("../public/search.png") no-repeat;
-    background-size: cover;
     background-color: rgba(253, 240, 255, 0.617);
     border: 1px solid rgba(126, 152, 200, 0);
     border-radius: 10px;
